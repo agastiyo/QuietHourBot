@@ -11,7 +11,6 @@ namespace QuietHourBot.Handlers
 {
     public class ClientEventHandler
     {
-
         public void SetUpEventHandler(DiscordClient Client)
         {
             Client.Heartbeated += HandleHeartbeat;

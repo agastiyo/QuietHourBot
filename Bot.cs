@@ -68,6 +68,7 @@ namespace QuietHourBot
             Commands.RegisterCommands<TextCommands>();
             Commands.RegisterCommands<NoteCommands>();
             Commands.RegisterCommands<RPGCommands>();
+            Commands.RegisterCommands<MermyBullyCommands>();
 
             await Client.ConnectAsync();
 
