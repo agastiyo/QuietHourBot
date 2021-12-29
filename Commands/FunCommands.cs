@@ -16,7 +16,6 @@ namespace QuietHourBot.Commands
         [Description("kills the tagged user")]
         public async Task Kill(CommandContext ctx, [Description("The person you want to kill")] [RemainingText] DiscordMember person)
         {
-            Random random = new Random();
             string[] waysToDie = { " contracted Cholera after drinking water from their dog's water bowl.", " died.", " tried to shoot a killer bee hive.",
                                     " drank the magic potion under the sink.", " is breaking the world record for holding their breath. They've been in the pool for" +
                                     " 11 minutes now.", " told their dad that he didn't need to get milk because they already had some.", " put the special sugar" +
@@ -24,7 +23,7 @@ namespace QuietHourBot.Commands
                                     " got very lucky while playing Russian Roulette.", " is the person who made array.count inclusive but not the for loop int.",
                                     " talked during quiet hours.", "got away!", " got stick bugged lol.", " got Rick Rolled.", " looked at the :ok_hand:",
                                     " is the person who got an index out of bounds exception for not declaring an array properly"};
-            await ctx.Channel.SendMessageAsync(person.Mention + waysToDie[random.Next(0, waysToDie.Length)]).ConfigureAwait(false);
+            await ctx.Channel.SendMessageAsync(person.Mention + waysToDie.PickRandomly()).ConfigureAwait(false);
         }
 
         [Command("boba")]

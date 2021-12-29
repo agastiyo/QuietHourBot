@@ -95,6 +95,17 @@ namespace QuietHourBot.Databases
         }
     }
 
+    public static class ArrayExt {
+        /// <summary>
+        /// Chooses a random option from an array
+        /// </summary>
+        /// <param name="options">Array to choose from</param>
+        public string PickRandomly(this string[] options) {
+            Random rnd = new Random();
+            return options[rnd.Next(0, options.Length)];
+        }
+    }
+
     public static class IDInfoGrabber
     {
         /// <summary>
