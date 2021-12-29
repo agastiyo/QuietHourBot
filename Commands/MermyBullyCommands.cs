@@ -22,7 +22,7 @@ namespace QuietHourBot.Commands {
             async Task Reply(object sender, MessageCreateEventArgs e) {
                 if (e.Author == mermy) {
                     string[] replies = { "Ok, Mermy whatEVER", "ok but did I ask tho", "Mermy, this is SERIOUS",
-                                        "You talking mad for a bot that itsn't open source", }
+                                        "You talking mad for a bot that itsn't open source", "'gaytest @mermy"};
                     await ctx.Channel.SendMessageAsync(replies.PickRandomly()).ConfigureAwait(false);
                 }
                 else if (e.Message.Content == "leave mermy alone" && e.Author == ctx.Member) {
