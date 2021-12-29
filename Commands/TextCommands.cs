@@ -17,22 +17,6 @@ namespace QuietHourBot.Commands
             await ctx.Channel.SendMessageAsync(sentence.ToLisp()).ConfigureAwait(false);
         }
 
-        [Command("speak")]
-        [Description("It can talk. I know.")]
-        public async Task Speak(CommandContext ctx, [Description("What you want the bot to say")][RemainingText] string message)
-        {
-            await ctx.Message.DeleteAsync();
-
-            var embedBuilder = new DiscordEmbedBuilder()
-            {
-                Title = message,
-                Description = $"This message was brought to you by our sponsor, {ctx.Member.DisplayName}",
-                Color = ctx.Member.Color
-            };
-
-            await ctx.Channel.SendMessageAsync(embed: embedBuilder).ConfigureAwait(false);
-        }
-
         [Command("expand")]
         [Description("expand (max 10 chars)")]
         public async Task Expand(CommandContext ctx, [Description("thing to expand")][RemainingText] string phrase)
@@ -55,7 +39,7 @@ namespace QuietHourBot.Commands
         }
 
         [Command("emojify")]
-        [Description("Complete change to emojis")]
+        [Description("Completely change your message to emojis")]
         public async Task Emojify(CommandContext ctx, [Description("the message you want to emojigy")][RemainingText] string message)
         {
             message = message.Trim().ToLower();

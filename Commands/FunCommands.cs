@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices.ComTypes;
 using System.Threading;
 using System.Threading.Tasks;
+
 namespace QuietHourBot.Commands
 {
     class FunCommands : BaseCommandModule
