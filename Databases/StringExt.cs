@@ -100,7 +100,7 @@ namespace QuietHourBot.Databases
         /// Chooses a random option from an array
         /// </summary>
         /// <param name="options">Array to choose from</param>
-        public string PickRandomly(this string[] options) {
+        public static string PickRandomly(this string[] options) {
             Random rnd = new Random();
             return options[rnd.Next(0, options.Length)];
         }
